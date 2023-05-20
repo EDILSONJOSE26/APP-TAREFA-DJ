@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/api/Frontend/js/script.js" defer></script>
+  <title>app Tarefas</title>
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-image: url(/api/Frontend/img/Win\ Wallpaper\ 8.jpg);
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .textop1 {
+      text-align: center;
+    }
+
+    .form-box {
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 50px 50px;
+      width: 100%;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    .form-box h2 {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .form-box h4 {
+      font-size: 30px;
+      text-align: left;
+      
+    }
+
+    .form-box form {
+      margin: 50px 50px;
+    }
+
+    form .input-group {
+      margin-bottom: 5px;
+    }
+
+    form .input-group label {
+      color: #3D3D3D;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* corrigir*/
+    form .input-group input {
+      width: 100%;
+      height: 30px;
+      background-color: rgba(255, 255, 255, 0.32);
+      border-radius: 20px;
+      outline: none;
+      border: 2px solid transparent;
+      padding: 15px;
+      font-size: 15px;
+      color: #616161;
+      transition: all 0.4s ease;
+    }
+
+    form .input-group input:focus {
+      border-color: #0be3ff;
+    }
+
+    form .input-group .form-buttons {
+      width: 30%;
+      height: 47px;
+      background: #0bf802;
+      border-radius: 20px;
+      outline: none;
+      border: none;
+      margin-top: 15px;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    form .baixo{
+      border-left: 10px;
+    }
+    .descricao-tarefa {
+    vertical-align: middle; /* Alinha verticalmente o conteúdo da célula */
+    padding: 10px; /* Adiciona um espaço interno para melhorar a aparência */
+  }
+
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="form-box">
+    <h2>Formulário Registro de Tarefas</h2>
+
+    <form id="form-tarefa" action="#">
+      <h4>Registrar Tarefa</h4>
+      <div class="input-group">
+        <label for="descricao">Descrição:</label>
+        <input class="inputs" type="text" name="descricao" id="descricao" placeholder="Descrição">
+      </div>
+      <div class="input-group">
+        <label for="responsavel">Responsável:</label>
+        <input class="inputs" type="text" name="responsavel" id="responsavel" placeholder="Nome do Responsável">
+      </div>
+      <div class="input-group">
+        <label for="nivel">Nível:</label>
+        <select class="inputs" id="nivel" name="nivel">
+          <option value="">Nível</option>
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="prioridade">Prioridade:</label>
+        <select class="inputs" id="prioridade" name="prioridade">
+          <option value="">Prioridade</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="situacao">Situação:</label>
+        <select class="inputs" id="situacao" name="situacao">
+          <option value="">Situação</option>
+          <option value="Nova">Nova</option>
+          <option value="Em andamento">Em andamento</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Resolvida">Resolvida</option>
+          <option value="Cancelada">Cancelada</option>
+        </select>
+      </div>
+
+      <input id="btn-cancelar" class="buttons" type="reset" value="Cancelar">
+      <input id="btn-confirmar" class="buttons" type="submit" value="Registrar">
+      <a href="login.html" id="sair" class="logout">Sair</a>
+
+
+      <h4 class="baixo">Tarefas Cadastradas</h4>
+
+      <table class="descricao-tarefa" cellspacing="14" id="list-tarefas">
+        <thead>
+          <tr>
+            <th colspan="1">Descrição</th>
+            <th colspan="1">Nível</th>
+            <th colspan="1">Prioridade</th>
+            <th colspan="1">Situação</th>
+            <th colspan="1">Responsável</th>
+            <th colspan="1">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="tabela">
+          <!-- Inclua aqui as linhas com os dados da tabela -->
+        </tbody>
+      </table>
+      
+    </form>
+  </div>
+
+ 
+</body>
+</html>
